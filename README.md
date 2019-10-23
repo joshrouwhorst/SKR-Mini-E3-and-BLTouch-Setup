@@ -13,7 +13,7 @@ I bought this BLTouch kit on [Amazon](https://www.amazon.com/gp/product/B07SCLF4
 
 ### Installing the SKR Mini Board
 
-This [Teaching Tech video](https://www.youtube.com/watch?v=-XUQKQnUNig) does a great job explaining how to install the SKR Mini E3 board and the BLTouch, however the BLTouch wire colors might be different. His were yellow, brown and red and mine were yellow, blue and red. (More on that below)
+This [Teaching Tech video](https://www.youtube.com/watch?v=-XUQKQnUNig) does a great job explaining how to install the SKR Mini E3 board and the BLTouch, however the BLTouch wire colors might be different. His were yellow, brown and red and mine were yellow, blue and red. In case the wires you have are completely different colors for some reason, I'll clarify the positioning of the wires. With the pins facing you and the wires coming from the top (like you see in the photo below) out-of-the-box the red wire was on the left, then blue in the center, and yellow on the end.
 
 ### Installing the BLTouch
 I used a mount that came with the BLTouch. But there are many printable mounts on Thingiverse.
