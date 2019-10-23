@@ -1,11 +1,15 @@
 # SKR Mini E3 and BLTouch Setup
-Dec 22, 2019
+Oct 22, 2019
 
 **Heads up: I really recommend reading this all the way through before going step by step through it.**
 
 This documents what I had to do to get my SKR Mini E3 and BLTouch installed and working on my Ender 3 Pro. I'm a software developer but I've never dug into electronics, so my knowledge is limited and I've relied heavily on finding smarter people's guidance to get this to work. One thing I learned is that guides for 3D printers seem to have a short lifespan before the info in them is obsolete. So good luck to you! If you're finding this a year down the road maybe some of it will still be useful, but you might need to do some more digging for up to date information. Reddit has some great communities of people who can help such as [r/ender3](https://www.reddit.com/r/ender3/).
 
 ## Hardware
+
+### What I'm Using
+
+I bought this BLTouch kit on [Amazon](https://www.amazon.com/gp/product/B07SCLF42D/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1). And I bought the SKR Mini E3 V1.2 from [BIQU](https://www.biqu.equipment/products/bigtreetech-skr-mini-e3-control-board-32-bit-integrated-tmc2209-uart-for-ender-4?variant=29366499836002).
 
 ### Installing the SKR Mini Board
 
@@ -50,7 +54,7 @@ While I was at it, I wanted to change the number of touch points the probe would
 I wanted to auto level the bed before every print but from what I've seen you need to set this up in your slicer software. I mostly use Cura so I found [this video](https://www.youtube.com/watch?v=lJ1PSb8uzB8) showing how to do this. This is an older video and in 4.2.1 you don't need to add the `G28 ; Home All` line because it's already in there. Just add `G29 ;Auto Level` after the home line.
 
 ### Editing and Compiling
-In order to compile the source code into your own `firmware.bin` file, I followed this guide to [install VSCode and PlatformIO](http://marlinfw.org/docs/basics/install_platformio_vscode.html). Deviating from that a bit and you don't necessarily have to do this, but I skipped everything after step 2. I manually downloaded the [source code](https://github.com/gazcbm/Marlin-2.0.x-SKR-Mini-E3-v1.2) and opened that folder in VSCode. (Then you don't have to mess around with Git if you're not familiar with it.) And the `platformio.ini` file is setup for the SKR Mini E3 already in that source code so you don't have to mess with that. And after I made the above changes the firmware I went to the PlatformIO tab and clicked "Build". Once it finished it put a `firmware.bin` file in the project folder under `.pio/build/STM32F103R_bigtree`. I copied that to my SD card, put it in the printer, and started it up.
+In order to compile the source code into your own `firmware.bin` file, I followed this guide to [install VSCode and PlatformIO](http://marlinfw.org/docs/basics/install_platformio_vscode.html). Deviating from that a bit and you don't necessarily have to do this, but I skipped everything after step 2. I manually downloaded the [source code](https://github.com/gazcbm/Marlin-2.0.x-SKR-Mini-E3-v1.2) and opened that folder in VSCode. (Then you don't have to mess around with Git if you're not familiar with it.) And the `platformio.ini` file is setup for the SKR Mini E3 already in that source code so you don't have to mess with that. And after I made the above changes to the firmware, I went to the PlatformIO tab and clicked "Build". Once it finished it put a `firmware.bin` file in the project folder under `.pio/build/STM32F103R_bigtree`. I copied that to my SD card, put it in the printer, and started it up.
 
 ![PlatformIO](Images/PlatformIO.png)
 
@@ -60,4 +64,4 @@ You might not get this, but I had issues with the BLTouch flashing an error now 
 
 ## That's It!
 
-Hopefully this helps! If you have suggestions for better ways to do this or want clarification on anything, let me know and I'll try to get back to you.
+Hopefully this helps! If you have suggestions for better ways to do this or want clarification on anything, let me know and I'll try to get back to you. 
